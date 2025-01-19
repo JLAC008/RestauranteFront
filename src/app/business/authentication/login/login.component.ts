@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
+import { loginEs } from '../../../../settings/Idioma/Esp'
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,10 @@ export default class LoginComponent {
   fcmToken: string = 'tokenrandomdepruebas';
   errorMessage: string = '';
 
+  //Texto plano
+  loginTexts = loginEs;
+  //Fin texto plano
+  
   constructor(private authService: AuthService, private router: Router){
 
   }
