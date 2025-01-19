@@ -15,6 +15,7 @@ export default class LoginComponent {
   username: string = '';
   password: string = '';
   fcmToken: string = 'tokenrandomdepruebas';
+  errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router){
 
@@ -23,7 +24,9 @@ export default class LoginComponent {
   login(): void{
     this.authService.login(this.username,this.password, this.fcmToken).subscribe({
       next: ()=> this.router.navigate(['/dashboard']),
-      error: (err) => console.error('Login failed', err)
+      error: (err) => {
+        this.errorMessage = err.error.errorDescription; 
+      }
     })
   }
 
