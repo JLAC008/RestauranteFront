@@ -14,8 +14,8 @@ export class AuthService {
   private tokenKey = 'authToken'
   constructor(private httpClient: HttpClient, private router:Router) { }
 
-  login(user:string, password:string, fcmToken:string ): Observable<any>{
-    return this.httpClient.post<any>(this.LOGIN_URL, {user,password,fcmToken}).pipe(
+  login(username:string, password:string, fcmToken:string ): Observable<any>{
+    return this.httpClient.post<any>(this.LOGIN_URL, {username,password,fcmToken}).pipe(
       tap(response => {
         if(response.token){
           console.log(response.token);

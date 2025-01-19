@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.css'
 })
 export default class LoginComponent {
-  user: string = '';
+  username: string = '';
   password: string = '';
   fcmToken: string = 'tokenrandomdepruebas';
 
@@ -21,7 +21,7 @@ export default class LoginComponent {
   }
 
   login(): void{
-    this.authService.login(this.user,this.password, this.fcmToken).subscribe({
+    this.authService.login(this.username,this.password, this.fcmToken).subscribe({
       next: ()=> this.router.navigate(['/dashboard']),
       error: (err) => console.error('Login failed', err)
     })
