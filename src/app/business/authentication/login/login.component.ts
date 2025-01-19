@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
+import { loginEs } from '../../../../settings/Idioma/Esp'
 
 @Component({
   selector: 'app-login',
@@ -12,18 +13,25 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.css'
 })
 export default class LoginComponent {
-  user: string = '';
+  username: string = '';
   password: string = '';
   fcmToken: string = 'tokenrandomdepruebas';
+  errorMessage: string = '';
 
+  //Texto plano
+  loginTexts = loginEs;
+  //Fin texto plano
+  
   constructor(private authService: AuthService, private router: Router){
 
   }
 
   login(): void{
-    this.authService.login(this.user,this.password, this.fcmToken).subscribe({
+    this.authService.login(this.username,this.password, this.fcmToken).subscribe({
       next: ()=> this.router.navigate(['/dashboard']),
-      error: (err) => console.error('Login failed', err)
+      error: (err) => {
+        this.errorMessage = err.error.errorDescription; 
+      }
     })
   }
 
