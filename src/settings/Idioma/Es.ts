@@ -1,6 +1,6 @@
 export const loginEs = {
-    title: "Bienvenido de nuevo",
-    subtitle: "Login de Autenticacion con el framework Angular 18 +en una aplicacion de Dasboard de usuario con menu amigable utilizando Tailwind CSS para los estilos.",
+    title: "Bienvenido a Click2Eat",
+    subtitle: "Con esta plataforma podrás gestionar tu restaurante de manera rápida y sencilla. Desde el menú hasta los pedidos, todo en un solo lugar.",
     loginButton: "Iniciar sesión",
     noAccountText: "¿No tienes una cuenta?",
     signUpText: "Inscríbete",

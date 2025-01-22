@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
-import { loginEs } from '../../../../settings/Idioma/Es'
+import { loginEs } from '../../../../settings/idioma/es'
 
 @Component({
   selector: 'app-login',
